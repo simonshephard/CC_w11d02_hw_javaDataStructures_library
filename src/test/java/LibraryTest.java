@@ -26,6 +26,17 @@ public class LibraryTest {
         assertEquals(1, library.countBooksOfGenre("genre"));
     }
 
+    @Test
+    public void countMultipleBooks() {
+        assertEquals(0, library.countBooks());
+        assertEquals(0, library.countBooksOfGenre("genre"));
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
+        assertEquals(4, library.countBooks());
+        assertEquals(4, library.countBooksOfGenre("genre"));
+    }
 
     @Test
     public void addBook() {
